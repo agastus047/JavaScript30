@@ -42,7 +42,18 @@
 
 <button></button>
 <script>
-
+  const divs = document.querySelectorAll('div');
+  divs.forEach(div => {
+    div.addEventListener('click', isClicked, {capture: false});
+  });
+  function isClicked(e) {
+    console.log(this.classList.value);
+    //e.stopPropagation();
+  }
+  const btn = document.querySelector('button');
+  btn.addEventListener('click', () => {
+    console.log('Clicked!');
+  }, {once: true});
 </script>
 </body>
 </html>
